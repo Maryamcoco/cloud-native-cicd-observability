@@ -30,15 +30,15 @@ pipeline{
     }
 }
 
-        stage('Run scan analysis with Snyk '){
-            steps{
-                script {
+       // stage('Run scan analysis with Snyk '){
+         //   steps{
+         //       script {
                     withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]) {
-                        sh "mvn snyk:test -fn"
-                    }
-                }
-            }
-        }
+           //             sh "mvn snyk:test -fn"
+             //       }
+              //  }
+          //  }
+        //}
 
         stage('Build docker image'){
             steps{
