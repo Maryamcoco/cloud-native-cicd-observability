@@ -20,7 +20,7 @@ pipeline{
                 // Run Maven with correct parameters for SonarCloud
                 sh '''
                     mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=babz_babz \
+                    -Dsonar.projectKey=babz_bab \
                     -Dsonar.organization=Babz \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.login=$SONAR_TOKEN
