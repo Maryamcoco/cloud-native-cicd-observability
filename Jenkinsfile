@@ -12,15 +12,23 @@ pipeline{
         //     }
         // }
         // sonar cloud analysis
-        stage('Compile and Run Sonar Analysis'){
-            steps{
-                script {
-                    withCredentials([string(credentialsId: 'Babz_token', variable: 'SONAR_TOKEN')]) {
-                        sh 'mvn clean verify sonar:sonar -Dsonar.token=$Babz_token -Dsonar.organization=Babz -Dsonar.projectKey=babz_babz-Dsonar.host.url=https://sonarcloud.io'
-                    }
-                }
+        stage('Compile and Run Sonar Analysis') {
+    steps {
+        script {
+            // Use the SonarCloud token stored in Jenkins credentials
+            withCredentials([string(credentialsId: 'Babz_token', variable: 'SONAR_TOKEN')]) {
+                // Run Maven with correct parameters for SonarCloud
+                sh '''
+                    mvn clean verify sonar:sonar \
+                    -Dsonar.projectKey=babz_babz \
+                    -Dsonar.organization=Babz \
+                    -Dsonar.host.url=https://sonarcloud.io \
+                    -Dsonar.login=$SONAR_TOKEN
+                '''
             }
         }
+    }
+}
 
         stage('Run scan analysis with Snyk '){
             steps{
