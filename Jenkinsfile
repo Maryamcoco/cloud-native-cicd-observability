@@ -21,7 +21,7 @@ pipeline{
                 sh '''
                     mvn clean verify sonar:sonar \
                     -Dsonar.projectKey=babz_bab \
-                    -Dsonar.organization=Babz \
+                    -Dsonar.organization=babz \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.login=$SONAR_TOKEN
                 '''
