@@ -14,11 +14,11 @@ pipeline{
         // sonar cloud analysis
         stage('Compile and Run Sonar Analysis'){
             steps{
-                script {Babz_token
+                script {
                     withCredentials([string(credentialsId: 'Babz_token', variable: 'SONAR_TOKEN')]) {
                         sh 'mvn clean verify sonar:sonar -Dsonar.token=$Babz_token -Dsonar.organization=Babz -Dsonar.projectKey=babz_babz-Dsonar.host.url=https://sonarcloud.io'
                     }
-                }Babz
+                }
             }
         }
 
