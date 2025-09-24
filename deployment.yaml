@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: babz-deployment
+  name: devm-deployment
   labels:
-    app: babz
+    app: devm
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: babz
+      app: devm
   template:
     metadata:
       labels:
-        app: babz
+        app: devm
     spec:
       containers:
-      - name: babz
-        image: 002298879977.dkr.ecr.us-east-1.amazonaws.com/babz
+      - name: devm
+        image: 002298879977.dkr.ecr.us-east-1.amazonaws.com/devm
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -26,9 +26,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: babz-service
+  name: devm-service
   labels:
-    app: babz
+    app: devm
 spec:
   type: LoadBalancer
   ports:
@@ -37,4 +37,4 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: babz
+    app: devm
