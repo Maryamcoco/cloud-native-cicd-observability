@@ -16,7 +16,7 @@ pipeline{
     steps {
         script {
             // Use the SonarCloud token stored in Jenkins credentials
-            withCredentials([string(credentialsId: 'devm', variable: 'SONAR_TOKEN')]) {
+            withCredentials([string(credentialsId: 'SONAR_TOKEN', variable: 'SONAR_TOKEN')]) {
                 // Run Maven with correct parameters for SonarCloud
                 sh '''
                     mvn clean verify sonar:sonar \
