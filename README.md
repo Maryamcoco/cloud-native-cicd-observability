@@ -120,19 +120,20 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 cloud-native-cicd-observability
 
 │── src/                   # Java application source code
-| targets
-│── Jenkinsfile            # CI/CD pipeline definition
-│── pom.xml                # Maven configuration
+│── .gitignore             # files to ignore
 │── Dockerfile             # Container image definition
+│── Jenkinsfile            # CI/CD pipeline definition
+│── License                # Apache License 2.0 for this project
 │── README.md              # Project documentation
-
+│── Catalina.policy        # controls permissions for Java code running in Tomcat
+│── Deployment.yaml        # kubernetes deployment definition defines how  app is deployed on a cluster
+│── Pom.xml                # defines dependencies, build plugins, and project structure
 ```
-Note: Terraform infrastructure code is managed separately and not included in this repo.
+**Note:** Terraform infrastructure code is managed separately and not included in this repo.
 
-📸 Screenshots & Recordings
+## 📸 Screenshots & Recordings
 
 🔗 Replace these links with your own screenshots & recordings:
-
 Jenkins Pipeline Execution
 
 SonarCloud Dashboard
@@ -149,46 +150,48 @@ Screen Recording of CI/CD Pipeline
 
 Add screenshots and screen recordings of Datadog dashboards here.
 
-⚙️ How to Use
-🔹 Method 1 (Recommended): Run via Jenkins CI/CD
+## ⚙️ How to Use
+#### 🔹 Method 1 (Recommended): Run via Jenkins CI/CD
 
-Fork/Clone this repo
-
+1. **Fork/Clone this repo**
+```
 git clone https://github.com/Maryamcoco/cloud-native-cicd-observability.git
 cd cloud-native-cicd-observability
+```
 
+2. **Create a Jenkins Pipeline** job pointing to this repo.
 
-Create a Jenkins Pipeline job pointing to this repo.
+3. **Install the necesary plugins** 
 
-Install the necesary plugins 
+4. Configure **credentials & tools** in Jenkins (see list above).
 
-Configure credentials & tools in Jenkins (see list above).
+5. **Run the pipeline** → Jenkins automates build, test, image push, and deployment.
 
-Run the pipeline → Jenkins automates build, test, image push, and deployment.
+#### 🔹 Method 2 (Optional): Run Manually
 
-🔹 Method 2 (Optional): Run Manually
+* If you want to run the app locally without Jenkins😄
 
-If you want to run the app locally without Jenkins:
-
-Clone repo & build:
-
+3. Clone repo & build:
+```
 mvn clean install
+```
 
-
-Build Docker image:
-
+4. Build Docker image:
+```
 docker build -t your-dockerhub-username/java-app .
+```
 
-
-Push to DockerHub:
-
+5. Push to DockerHub:
+```
 docker push your-dockerhub-username/java-app
+```
 
-
-Deploy to Kubernetes:
-
+6. Deploy to Kubernetes:
+```
 kubectl apply -f k8s-deployment.yaml
+```
 
-📜 License
+## 📜 License
+Copyright (c) 2025 **Maryam Abdulrauf**😄
+Licensed under the **Apache License**, Version 2.0
 
-This project is licensed by DevOps Engineer Maryam.
