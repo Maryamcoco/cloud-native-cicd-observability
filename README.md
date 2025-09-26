@@ -27,6 +27,7 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 - Prometheus & Grafana (for metrics and dashboards)
 
 **Infrastructure as Code (IaC)** with Terraform (separate setup, not included in this repo)
+
 ---
 
 **NOTE:** This repository contains the application source code and Jenkins pipeline configuration. Infrastructure resources were provisioned using Terraform (managed outside this repo).
@@ -111,17 +112,21 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 
  #### Grafana
   - Connected to Prometheus as data source
+  - Dashboards created for Kubernetes workloads & app performance
 
-Dashboards created for Kubernetes workloads & app performance
-📂 Repository Structure
-cloud-native-cicd-observability/
+
+## 📂 Repository Structure
+```
+cloud-native-cicd-observability
+
 │── src/                   # Java application source code
+| targets
 │── Jenkinsfile            # CI/CD pipeline definition
 │── pom.xml                # Maven configuration
 │── Dockerfile             # Container image definition
 │── README.md              # Project documentation
 
-
+```
 Note: Terraform infrastructure code is managed separately and not included in this repo.
 
 📸 Screenshots & Recordings
