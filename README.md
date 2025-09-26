@@ -24,9 +24,9 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 
 - Datadog (via Datadog Agent installed on EC2 Linux)
 
-- Prometheus
+- Prometheus & Grafana (for metrics and dashboards)
 
-- Grafana
+**Infrastructure as Code (IaC)** with Terraform (separate setup, not included in this repo)
 ---
 
 **NOTE:** This repository contains the application source code and Jenkins pipeline configuration. Infrastructure resources were provisioned using Terraform (managed outside this repo).
@@ -35,7 +35,7 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 ## 🛠️ Tools & Services
 - **Jenkins**
 
-  - *Installed Maven 3.8 as a Jenkins tool.*
+  - *Installed ```Maven 3.8``` as a Jenkins tool.*
   - *Installed the required plugins:*
     - Pipeline stage view
     - Prometheus metrics plugin
@@ -48,7 +48,7 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 
     - SonarCloud Token
     - DockerHub Username & Password
-    - Kubernetes kubeconfig (for EKS)
+    - Kubernetes ```kubeconfig``` content
     - AWS IAM Access Keys
 
 - **DockerHub** – hosted container images for deployments.
@@ -63,54 +63,54 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 
 - **Datadog – observability** - (agent installed on EC2 to collect telemetry & send to Datadog dashboards).
 --- 
-⚙️ CI/CD Pipeline Flow
+## ⚙️ CI/CD Pipeline Flow
 
-Code Commit → Developer pushes to GitHub.
+**1. Code Commit →** 
+   - Developer pushes to GitHub.
 
-Jenkins Build →
+**2. Jenkins Build →**
 
-Pulls source code.
+   - Pulls source code.
 
-Runs Maven build & tests.
+   - Runs Maven build & tests.
 
-Performs SonarCloud analysis.
+   - Performs SonarCloud analysis.
 
-Builds Docker image.
+   - Builds Docker image.
 
-Pushes image to DockerHub & AWS ECR.
+   - Pushes image to DockerHub & AWS ECR.
 
-Deployment to Kubernetes (EKS) →
+**3. Deployment to Kubernetes (EKS) →**
 
-Uses kubeconfig credentials.
+   - Uses kubeconfig credentials.
 
-Deploys updated Docker image.
+   - Deploys updated Docker image.
 
-Monitoring →
+**4. Monitoring →**
 
-Prometheus scrapes metrics.
+   - Prometheus scrapes metrics.
 
-Grafana dashboards display system health.
+   - Grafana dashboards display system health.
+  
+   - Datadog agent collects and forwards logs/metrics/traces.
 
-Datadog agent collects and forwards logs/metrics/traces.
 
-📊 Observability & Monitoring
-Datadog
+## 📊 Observability & Monitoring
+ #### Datadog
 
-Installed Datadog Agent on EC2 Linux instance
+  - Installed **Datadog-Agent** on EC2 Linux instance
+  - enable **datadog.yaml** file
+  - restart the **datadog-agent**
+  - Collected system & application metrics
+  - Integrated dashboards (CPU, Memory, Docker, Kubernetes)
 
-Collected system & application metrics
+ #### Prometheus
 
-Integrated dashboards (CPU, Memory, Docker, Kubernetes)
+  - Installed via Terraform & Helm
+   - Scraping metrics from Node Exporter & Blackbox Exporter
 
-Prometheus
-
-Installed via Terraform & Helm
-
-Scraping metrics from Node Exporter & Blackbox Exporter
-
-Grafana
-
-Connected to Prometheus as data source
+ #### Grafana
+  - Connected to Prometheus as data source
 
 Dashboards created for Kubernetes workloads & app performance
 📂 Repository Structure
