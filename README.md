@@ -157,6 +157,8 @@ cloud-native-cicd-observability
 ### Datadog GIF😅
 ![Gif](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/Datadog%20gif.gif)
 
+###### ⚠️ Note: Instance IDs or hostnames shown in the demo screenshots/GIFs are from temporary test environments that have already been terminated. No active or sensitive infrastructure is exposed.
+
 ## ⚙️ How to Use
 #### 🔹 Method 1 (Recommended): Run via Jenkins CI/CD
 
