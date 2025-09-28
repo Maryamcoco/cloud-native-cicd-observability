@@ -133,8 +133,8 @@ cloud-native-cicd-observability
 
 ## 📸 Screenshots & Recordings
 
-🔗 Replace these links with your own screenshots & recordings:
-Jenkins Pipeline Execution
+![Home Page](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/application%20homepage.png)
+*Home page of the application*
 
 SonarCloud Dashboard
 
