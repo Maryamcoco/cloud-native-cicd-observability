@@ -118,7 +118,7 @@ This project demonstrates a full **end-to-end DevOps** pipeline for deploying a 
 ## 📂 Repository Structure
 ```
 cloud-native-cicd-observability
-
+│── media/                 # media which consists of the screenshots and Gif
 │── src/                   # Java application source code
 │── .gitignore             # files to ignore
 │── Dockerfile             # Container image definition
@@ -154,6 +154,8 @@ cloud-native-cicd-observability
 ### Datadog Dashboard
 ![Datadog infrastructure host](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/Infrastructure%20list%20on%20Datadog.png)
 
+### Datadog GIF😅
+![Gif](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/Datadog%20gif.gif)
 
 ## ⚙️ How to Use
 #### 🔹 Method 1 (Recommended): Run via Jenkins CI/CD
