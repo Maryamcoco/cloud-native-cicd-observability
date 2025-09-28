@@ -132,23 +132,28 @@ cloud-native-cicd-observability
 **Note:** Terraform infrastructure code is managed separately and not included in this repo.
 
 ## 📸 Screenshots & Recordings
-
+### Home Page
 ![Home Page](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/application%20homepage.png)
 *Home page of the application*
 
-SonarCloud Dashboard
+### Jenkins pipeline stages
+![jenkins pipeline stage view](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/Jenkins%20pipeline%20view.png)
 
-DockerHub/ECR Image
+### SonarCloud Analysis Dashboard
+![Sonarcloud dashboard](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/sonarcloud%20analysis%20dashboard.png)
 
-Prometheus Metrics
+### Grafana node exporter dashboard 
+![Node Exporter Dashboard](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/node%20exporter%20dashboard%20on%20grafana.png)
 
-Grafana Dashboard
+### Grafana dashboard full 
+![Node Exporter Dashboard](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/node%20exporter%20full.png)
 
-Datadog Dashboard
+### Datadog Metrics
+![Datadog Metrics](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/datadog%20dashboard.png)
 
-Screen Recording of CI/CD Pipeline
+### Datadog Dashboard
+![Datadog infrastructure host](https://github.com/Maryamcoco/cloud-native-cicd-observability/blob/master/media/Infrastructure%20list%20on%20Datadog.png)
 
-Add screenshots and screen recordings of Datadog dashboards here.
 
 ## ⚙️ How to Use
 #### 🔹 Method 1 (Recommended): Run via Jenkins CI/CD
