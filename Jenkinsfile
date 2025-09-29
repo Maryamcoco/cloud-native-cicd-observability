@@ -20,8 +20,8 @@ pipeline{
                 // Run Maven with correct parameters for SonarCloud
                 sh '''
                     mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=devm_devm \
-                    -Dsonar.organization=devm \
+                    -Dsonar.projectKey= \
+                    -Dsonar.organization= \
                     -Dsonar.host.url=https://sonarcloud.io \
                     -Dsonar.login=$SONAR_TOKEN
                 '''
@@ -43,7 +43,7 @@ pipeline{
         stage('Push Docker Image to ECR'){
             steps{
                 script{
-                    docker.withRegistry('https://002298879977.dkr.ecr.us-east-1.amazonaws.com/devm','ecr:us-east-1:aws-credentials') {
+                    docker.withRegistry('','ecr:us-east-1:aws-credentials') {
                     app.push("latest")
                 }
                 }
