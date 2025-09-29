@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: devm
-        image: 002298879977.dkr.ecr.us-east-1.amazonaws.com/devm
+        image: 
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
